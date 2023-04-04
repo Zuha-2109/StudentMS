@@ -11,7 +11,7 @@ function addStudent() {
     const degreeValue = document.getElementById('degree').value;
 
     if (document.querySelector("#submit").innerText == "Edit Student") {
-        console.log("this will edit and not add");
+
         console.log(global_id);
         let index;
 
@@ -105,7 +105,7 @@ function showTable() {
             } else if (key == 'grade') {
                 grade.innerHTML = student[key];
             } else
-                degree.innerHTML = `<div class='degree'><div>${student[key]}</div> <div class="icons"><a onClick="edit(${student['ID']})" class='fa'>&#xf044;</a> <a onClick="del(${student['ID']})" class='fa'>&#xf1f8;</a> </div></div> `;
+                degree.innerHTML = `<div class='degree'><div>${student[key]}</div> <div class="icons"><a onClick="edit(${student['ID']})" class='fa'>&#xf044;</a> <a onClick="delet(${student['ID']})" class='fa'>&#xf1f8;</a> </div></div> `;
 
             row.appendChild(id);
             row.appendChild(name);
@@ -166,7 +166,7 @@ function edit(id) {
     global_id = id;
 }
 
-function del(id) {
+function delet(id) {
     students.forEach((student, index) => {
         if (student['ID'] == id) {
             students.splice(index, 1);
